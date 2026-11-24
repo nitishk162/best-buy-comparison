@@ -1,0 +1,15 @@
+{
+ "sources": {
+  "Best Buy": {
+   "items": [],
+   "checked": null,
+   "status": "Not configured"
+  },
+  "eBay": {
+   "items": [],
+   "checked": null,
+   "status": "Not configured"
+  }
+ },
+ "drops": []
+}
