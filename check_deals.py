@@ -137,11 +137,9 @@ def main():
     temp = STATE.with_suffix(".tmp")
     temp.write_text(json.dumps(state, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     temp.replace(STATE)
-    # If no retailers provided any data, emit a warning but do not fail the workflow
-if not ok:
-    print("Warning: No retailer refreshed. Check API credentials and source status.", file=sys.stderr)
-    # Exit with status 0 so the GitHub Action treats it as successful
-    sys.exit(0)
+    if not ok:
+        print("Warning: No retailer refreshed. Check API credentials and source status.", file=sys.stderr)
+        return
 
 
 if __name__ == "__main__":
